@@ -1,0 +1,41 @@
+Inicio
+
+crear arreglo mazo con valores de cartas
+
+pedir "Como te llamas"
+guardar en nombre
+
+crear jugador con nombre y puntos en 0
+
+sacar dos cartas aleatorias del mazo
+sumar esas cartas a los puntos del jugador
+
+mostrar "Empieza el juego!"
+
+poner jugando = verdadero
+
+mientras juega:
+
+    mostrar puntos del jugador
+
+    si puntos > 21:
+        mostrar "Perdiste, te pasaste de 21 :("
+        jugando = falso
+
+    si no:
+        preguntar "Pedir carta (p) o Plantarse (s)"
+        leer opcion
+
+        si opcion es 'p':
+            sacar carta aleatoria
+            mostrar carta
+            sumar carta a puntos
+
+        si opcion es 's':
+            mostrar puntos finales
+            jugando = falso
+
+        si no:
+            mostrar "Ingresa p o s"
+
+Fin
