@@ -1,0 +1,39 @@
+Inicio
+
+activo lo aleatorio
+
+pido el nombre
+creo al jugador con 100 monedas
+
+guardo unos simbolos: @ # $ %
+
+mientras tenga monedas
+
+    pregunto si quiere jugar (s/n)
+    leo lo que diga
+
+    si dice n entonces
+        ya no juega más
+    fin si
+
+    le quito 10 monedas
+
+    saco 3 simbolos al azar
+
+    muestro los 3 simbolos
+
+    si los 3 son iguales entonces
+        digo que gana 50
+        le sumo 50 monedas
+    sino si hay 2 iguales entonces
+        digo que gana 20
+        le sumo 20 monedas
+    fin si
+
+    muestro cuantas monedas le quedan
+
+fin mientras
+
+digo fin
+
+Fin
