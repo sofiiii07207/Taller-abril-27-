@@ -1,0 +1,76 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+class Jugador {
+private:
+    string nombre;
+    int monedas;
+
+public:
+    Jugador(string n, int m) {
+        nombre = n;
+        monedas = m;
+    }
+
+    int getMonedas() {
+        return monedas;
+    }
+
+    void apostar(int c) {
+        monedas -= c;
+    }
+
+    void ganar(int p) {
+        monedas += p;
+    }
+};
+
+int main() {
+
+    srand(time(0));
+
+    string nombre;
+    cout << "nombre: ";
+    cin >> nombre;
+
+    Jugador j1(nombre, 100);
+
+    char op;
+
+    char simbolos[4] = {'@','#','$','%'};
+
+    while (j1.getMonedas() > 0) {
+
+        cout << "tirar (s/n): ";
+        cin >> op;
+
+        if (op == 'n') break;
+
+        j1.apostar(10);
+
+        char r1 = simbolos[rand()%4];
+        char r2 = simbolos[rand()%4];
+        char r3 = simbolos[rand()%4];
+
+        cout << "[" << r1 << "]"
+             << "[" << r2 << "]"
+             << "[" << r3 << "]" << endl;
+
+        if (r1 == r2 && r2 == r3) {
+            cout << "ganas 50" << endl;
+            j1.ganar(50);
+        }
+        else if (r1 == r2 || r1 == r3 || r2 == r3) {
+            cout << "ganas 20" << endl;
+            j1.ganar(20);
+        }
+
+        cout << "monedas: " << j1.getMonedas() << endl;
+    }
+
+    cout << "fin" << endl;
+
+    return 0;
+}
